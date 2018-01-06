@@ -73,8 +73,8 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 262800; // 1 year
-        consensus.nMasternodePaymentsStartBlock = 1000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nSubsidyHalvingInterval = 525600; // 1 year
+        consensus.nMasternodePaymentsStartBlock = 5000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
@@ -94,7 +94,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000004d53c286b65d609bb190fa6d373ba54f47b1f67d2659873cc1e97ab7b4e");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 1 * 60 * 60; // Tincoin: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Tincoin: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Tincoin: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -126,10 +126,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x23;
-        pchMessageStart[1] = 0x03;
-        pchMessageStart[2] = 0x84;
-        pchMessageStart[3] = 0x19;
+        pchMessageStart[0] = 0x19;
+        pchMessageStart[1] = 0x84;
+        pchMessageStart[2] = 0x03;
+        pchMessageStart[3] = 0x23;
         vAlertPubKey = ParseHex("046fd14af252257e00914eee1ba7af0a4ca53cb2d0c0d26d2c15a41c69ccf06c87dd91cc358db8bc1fc37bcfd5106690dbe9a2347a885156cfa290581f75c2fd2a");
         nDefaultPort = 9909;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
@@ -196,7 +196,7 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 262800;
+        consensus.nSubsidyHalvingInterval = 525600;
         consensus.nMasternodePaymentsStartBlock = 1000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 4030;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
@@ -217,7 +217,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000004d53c286b65d609bb190fa6d373ba54f47b1f67d2659873cc1e97ab7b4e");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 1 * 60 * 60; // Tincoin: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Tincoin: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Tincoin: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
