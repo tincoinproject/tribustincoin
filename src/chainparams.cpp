@@ -91,7 +91,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1");
+        consensus.BIP34Hash = uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 1 * 60 * 60; // Tincoin: 1 hour
         consensus.nPowTargetSpacing = 2 * 60; // Tincoin: 2 minutes
@@ -141,7 +141,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //Genesis block hash
-        assert(consensus.hashGenesisBlock == uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9"));
         printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //hash merkle root
         assert(genesis.hashMerkleRoot == uint256S("0x0be84bda36b29e088bb10bcb24e3969b55e8bf4b38584f58afa200b78e53f9d2"));
 
@@ -179,7 +179,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (     0, uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1")),
+            (     0, uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9 ")),
             1515243600, // * UNIX timestamp of last checkpoint block
             0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -214,7 +214,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1");
+        consensus.BIP34Hash = uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 1 * 60 * 60; // Tincoin: 1 hour
         consensus.nPowTargetSpacing = 2 * 60; // Tincoin: 2 minutes
@@ -259,7 +259,7 @@ public:
 
         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //Genesis block hash
 
-        assert(consensus.hashGenesisBlock == uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9"));
         assert(genesis.hashMerkleRoot == uint256S("0x0be84bda36b29e088bb10bcb24e3969b55e8bf4b38584f58afa200b78e53f9d2"));
 
         vFixedSeeds.clear();
@@ -295,7 +295,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1")),
+            (      0, uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9")),
 
             1515243600, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
@@ -371,7 +371,7 @@ public:
 
         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //Genesis block hash
 
-        assert(consensus.hashGenesisBlock == uint256S("0x000008ae92094501ad4331d18109bb30fa64d3936d0773587b9044b88f9e1de1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9"));
         assert(genesis.hashMerkleRoot == uint256S("0x0be84bda36b29e088bb10bcb24e3969b55e8bf4b38584f58afa200b78e53f9d2"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
@@ -387,7 +387,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x000004d53c286b65d609bb190fa6d373ba54f47b1f67d2659873cc1e97ab7b4e")),
+            ( 0, uint256S("0x9056101b473d35c92abffc7a159414edff70cd2ad803c8047d413751142fc1e9")),
             0,
             0,
             0
