@@ -1240,24 +1240,15 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         dDiff = ConvertBitsToDouble(nPrevBits);
     }
 
-    if (nPrevHeight < 200) {
-        // Early ages...
-        // 1111/((x+1)^2)
-        nSubsidyBase = (1111.0 / (pow((dDiff+1.0),2.0)));
-        if(nSubsidyBase > 200) nSubsidyBase = 200;
-        else if(nSubsidyBase < 50) nSubsidyBase = 50;
+    if (nPrevHeight < 500) {
+        // no reward
+        nSubsidyBase = 0;
     } else if (nPrevHeight < 1000) {
-        // CPU mining era
-        // 11111/(((x+51)/6)^2)
-        nSubsidyBase = (11111.0 / (pow((dDiff+51.0)/6.0,2.0)));
-        if(nSubsidyBase > 100) nSubsidyBase = 100;
-        else if(nSubsidyBase < 25) nSubsidyBase = 25;
+
+        nSubsidyBase = 5;
     } else {
-        // GPU/ASIC mining era
-        // 2222222/(((x+2600)/9)^2)
-        nSubsidyBase = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
-        if(nSubsidyBase > 15) nSubsidyBase = 15;
-        else if(nSubsidyBase < 5) nSubsidyBase = 5;
+        // normal reward
+        nSubsidyBase = 10;
     }
 
     // LogPrintf("height %u diff %4.2f reward %d\n", nPrevHeight, dDiff, nSubsidyBase);
@@ -1265,7 +1256,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
     // yearly decline of production by ~12% per year, projected ~33M coins max by year 2050+.
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy*0.12;
+        nSubsidy -= nSubsidy*0.15;
     }
 
     // Hard fork to reduce the block reward by 10 extra percent (allowing budget/superblocks)
