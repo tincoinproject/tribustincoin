@@ -151,8 +151,8 @@ public:
         vSeeds.push_back(CDNSSeedData("node 2", "51.15.208.150"));
         vSeeds.push_back(CDNSSeedData("node 3", "150.95.174.70"));
 
-        // Tincoin addresses start with 'T'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
+        // Tincoin addresses start with 't'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,127);
         // Tincoin script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
         // Tincoin private keys start with '7' or 'X'
