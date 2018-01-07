@@ -137,7 +137,7 @@ public:
         nPruneAfterHeight = 100000;
 
 
-        genesis = CreateGenesisBlock(1515243600, 630235, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1515292200, 115676, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //Genesis block hash
@@ -254,7 +254,7 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1515243600, 630235, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1515292200, 115676, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //Genesis block hash
@@ -365,7 +365,7 @@ public:
         nDefaultPort = 19994;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1515243600, 630235, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1515292200, 115676, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
